@@ -120,8 +120,7 @@ def tf_model (X_train , y_train,vocab_size):
     #intilize the bias variables
     input_biases =tf.Variable(tf.random_normal([embedding_dim]))
     output_biases = tf.Variable(tf.random_normal([vocab_size]))
-    weights = {'hidden': tf.Variable(tf.random_normal([vocab_size, embedding_dim])),'output': tf.Variable(tf.random_normal([embedding_dim, vocab_size]))}
-    biases = {'hidden': tf.Variable(tf.random_normal([embedding_dim])),'output': tf.Variable(tf.random_normal([vocab_size]))}
+    
     #lets create our input and output layers
     input_layer = tf.add(tf.matmul(X, input_weights),input_biases)
     output_layer = tf.add(tf.matmul(input_layer,output_weights), output_biases)    
